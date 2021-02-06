@@ -68,3 +68,213 @@ stage('Package du projet')
 }
 }
 }
+pipeline
+{
+    agent any
+    tools{
+        maven 'apache-maven-3.6.3'
+        jdk 'jdk-11.0.8'
+         }
+    stages{
+      stage('Compilation du projet')
+          {
+               steps{
+               bat 'mvn compile'
+               }
+           post
+           {
+               success{
+                  echo 'Projet compilé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de compilation'
+                  }
+      }
+}
+stage('TEST du projet')
+          {
+               steps{
+               bat 'mvn test'
+               }
+           post
+           {
+               success{
+                  echo 'Projet testé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de test'
+                  }
+      }
+}
+stage('Package du projet')
+          {
+               steps{
+               bat 'mvn package'
+               }
+           post
+           {
+               success{
+                  echo 'Projet testé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de test'
+                  }
+      }
+}
+ stage('Géneration de rapport')
+          {
+               steps{
+               bat 'mvn site'
+               }
+           post
+           {
+               success{
+                  echo 'Projet compilé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de compilation'
+                  }
+      }
+}
+}
+}
+pipeline
+{
+    agent any
+    tools{
+        maven 'apache-maven-3.6.3'
+        jdk 'jdk-11.0.8'
+         }
+    stages{
+      stage('Compilation du projet')
+          {
+               steps{
+               bat 'mvn compile'
+               }
+           post
+           {
+               success{
+                  echo 'Projet compilé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de compilation'
+                  }
+      }
+}
+stage('TEST du projet')
+          {
+               steps{
+               bat 'mvn test'
+               }
+           post
+           {
+               success{
+                  echo 'Projet testé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de test'
+                  }
+      }
+}
+stage('Package du projet')
+          {
+               steps{
+               bat 'mvn package'
+               }
+           post
+           {
+               success{
+                  echo 'Projet testé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de test'
+                  }
+      }
+}
+ stage('Géneration de rapport')
+          {
+               steps{
+               bat 'mvn site'
+               }
+           post
+           {
+               success{
+                  echo 'Projet compilé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de compilation'
+                  }
+      }
+}
+}
+}
+pipeline
+{
+    agent any
+    tools{
+        maven 'apache-maven-3.6.3'
+        jdk 'jdk-11.0.8'
+         }
+    stages{
+      stage('Compilation du projet')
+          {
+               steps{
+               bat 'mvn compile'
+               }
+           post
+           {
+               success{
+                  echo 'Projet compilé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de compilation'
+                  }
+      }
+}
+stage('TEST du projet')
+          {
+               steps{
+               bat 'mvn test'
+               }
+           post
+           {
+               success{
+                  echo 'Projet testé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de test'
+                  }
+      }
+}
+stage('Package du projet')
+          {
+               steps{
+               bat 'mvn package'
+               }
+           post
+           {
+               success{
+                  echo 'Projet testé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de test'
+                  }
+      }
+}
+ stage('Géneration de rapport')
+          {
+               steps{
+               bat 'mvn site'
+               }
+           post
+           {
+               success{
+                  echo 'Projet compilé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de compilation'
+                  }
+      }
+}
+}
+}
