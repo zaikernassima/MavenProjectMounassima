@@ -51,6 +51,20 @@ stage('Package du projet')
                   }
       }
 }
-
+ stage('Géneration de rapport')
+          {
+               steps{
+               bat 'mvn site'
+               }
+           post
+           {
+               success{
+                  echo 'Projet compilé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de compilation'
+                  }
+      }
+}
 }
 }
