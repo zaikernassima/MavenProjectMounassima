@@ -21,6 +21,36 @@ pipeline
                   }
       }
 }
+stage('TEST du projet')
+          {
+               steps{
+               bat 'mvn test'
+               }
+           post
+           {
+               success{
+                  echo 'Projet testé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de test'
+                  }
+      }
+}
+stage('Package du projet')
+          {
+               steps{
+               bat 'mvn package'
+               }
+           post
+           {
+               success{
+                  echo 'Projet testé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de test'
+                  }
+      }
+}
 
 }
 }
