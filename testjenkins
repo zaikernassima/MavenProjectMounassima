@@ -1,0 +1,26 @@
+pipeline
+{
+    agent any
+    tools{
+        maven 'apache-maven-3.6.3'
+        jdk 'jdk-11.0.8'
+         }
+    stages{
+      stage('TEST du projet')
+          {
+               steps{
+               bat 'mvn test'
+               }
+           post
+           {
+               success{
+                  echo 'Projet testé avec succès'
+                  }
+               failure{
+                  echo 'Erreur de test'
+                  }
+      }
+}
+
+}
+}
